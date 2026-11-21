@@ -152,13 +152,16 @@ summary:focus-visible {
 
 .nav-report {
   min-height: 44px;
+  min-width: 148px;
   padding: 0 16px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   color: #1c1612;
   background: var(--tangerine);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .nav-report:hover {

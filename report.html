@@ -88,7 +88,7 @@
 <p class="eyebrow eyebrow-dark">02 / Text Reporting Form</p>
 <h2>Submit an Issue Report</h2>
 <p>Works on low mobile data—no account or photo upload needed. Fill in the details below and submit.</p>
-<p class="form-notice"><strong>Submission information:</strong> Online submissions work after the site is deployed and Netlify Forms is enabled. Until live delivery and email notifications are configured, contact the project team at <a href="mailto:kyebandoclean@gmail.com">kyebandoclean@gmail.com</a>. Do not assume this form alerts KCCA or LC1 automatically.</p><form action="thanks.html" class="local-form" data-netlify="true" data-netlify-honeypot="bot-field" method="POST" name="problem-report"><input name="form-name" type="hidden" value="problem-report"/><p class="honeypot-field"><label>Leave this field blank: <input autocomplete="off" name="bot-field" tabindex="-1"/></label></p>
+<p class="form-notice"><strong>Submission information:</strong> Submissions are prepared and sent through your email app on this static site. Netlify-hosted deployments submit directly to Netlify Forms. Do not assume this form alerts KCCA or LC1 automatically.</p><form action="thanks.html" class="local-form" data-netlify="true" data-netlify-honeypot="bot-field" id="problem-report-form" method="POST" name="problem-report"><input name="form-name" type="hidden" value="problem-report"/><p class="honeypot-field"><label>Leave this field blank: <input autocomplete="off" name="bot-field" tabindex="-1"/></label></p>
 <div class="form-field">
 <label for="rep-type">Issue Type</label>
 <select id="rep-type" name="issue_type" required="">
@@ -124,6 +124,7 @@
 </div>
 <button class="button button-dark" type="submit">Submit Problem Report →</button>
 </form>
+<p class="target-confirmation" id="report-email-status" role="status" aria-live="polite"></p>
 </section>
 <section class="content-section" id="contacts-next-steps">
 <p class="eyebrow eyebrow-dark">03 / Other Contacts &amp; Next Steps</p>
@@ -205,5 +206,34 @@
 <span>Last Reviewed: 12 Nov 2026</span>
 </div>
 </footer>
+<script>
+  const reportForm = document.querySelector("#problem-report-form");
+  const reportStatus = document.querySelector("#report-email-status");
+
+  reportForm.addEventListener("submit", (event) => {
+    const host = window.location.hostname;
+    const isNetlify = host === "localhost" || host === "127.0.0.1" || host.endsWith(".netlify.app");
+
+    if (isNetlify) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const data = new FormData(reportForm);
+    const subject = `Kyebando Clean problem report - ${data.get("issue_type")}`;
+    const body = [
+      `Issue type: ${data.get("issue_type")}`,
+      `Zone: ${data.get("zone")}`,
+      `Local landmark: ${data.get("landmark")}`,
+      `Details: ${data.get("details")}`,
+      `Contact phone: ${data.get("phone")}`
+    ].join("\n");
+
+    reportStatus.textContent = "Opening your email app with the report ready to send.";
+    reportStatus.style.display = "block";
+    window.location.href = `mailto:kyebandoclean@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
 </body>
 </html>
