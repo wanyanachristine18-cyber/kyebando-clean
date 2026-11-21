@@ -1,0 +1,1993 @@
+:root {
+  color-scheme: light;
+  --forest: #174a35;
+  --forest-deep: #103727;
+  --leaf: #d7ed6d;
+  --sun: #f0c84b;
+  --tangerine: #ec7146;
+  --ink: #1c2821;
+  --muted: #556259;
+  --paper: #f7f7f0;
+  --line: #d9dfd7;
+  --font-display: "Space Grotesk", "Trebuchet MS", sans-serif;
+  --font-body: "DM Sans", "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--tangerine);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 20;
+  top: 8px;
+  left: 8px;
+  min-height: 44px;
+  padding: 10px 14px;
+  transform: translateY(-150%);
+  color: #fff;
+  background: var(--forest);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid rgba(23, 74, 53, .14);
+  background: var(--paper);
+}
+
+.header-inner {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 84px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: var(--forest);
+}
+
+.brand-mark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.brand-name {
+  font: 700 17px/1 var(--font-display);
+}
+
+.brand-name b {
+  color: var(--forest);
+}
+
+.brand-name small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font: 700 9px/1 var(--font-body);
+  letter-spacing: 1.4px;
+}
+
+.nav-drawer {
+  display: contents;
+}
+
+.menu-toggle {
+  display: none;
+  list-style: none;
+  cursor: pointer;
+}
+
+.menu-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.primary-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 28px);
+}
+
+.primary-nav a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.primary-nav a:not(.nav-report):hover,
+.primary-nav a[aria-current="page"] {
+  color: var(--forest);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.nav-report {
+  min-height: 44px;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1c1612;
+  background: var(--tangerine);
+  font-weight: 700;
+}
+
+.nav-report:hover {
+  background: #f1865e;
+}
+
+.alert-banner {
+  background: var(--forest-deep);
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, .14);
+}
+
+.alert-banner-inner {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 64px;
+  margin: auto;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.alert-banner p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.hero {
+  position: relative;
+  min-height: 500px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, .9fr);
+  overflow: hidden;
+  background: linear-gradient(rgba(15, 43, 31, .66), rgba(15, 43, 31, .62)), url("../assets/street-waste-cleanup.jpg") center/cover no-repeat;
+  color: #fff;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  width: min(650px, 100%);
+  padding: 68px 40px 64px max(24px, calc((100vw - 1200px) / 2));
+  align-self: center;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--leaf);
+  font: 700 11px/1.3 var(--font-body);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.eyebrow-dark {
+  color: var(--forest);
+}
+
+.eyebrow a {
+  text-decoration: none;
+}
+
+.eyebrow a:hover {
+  text-decoration: underline;
+}
+
+.eyebrow-dot,
+.status-pip {
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--leaf);
+  vertical-align: 1px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}
+
+.hero h1 {
+  margin: 0 0 20px;
+  font-size: clamp(44px, 5.6vw, 68px);
+  line-height: 1.02;
+  font-weight: 600;
+}
+
+.hero h1 em,
+.page-hero h1 em {
+  color: var(--leaf);
+  font-style: normal;
+}
+
+.hero-intro {
+  max-width: 460px;
+  margin-bottom: 26px;
+  color: rgba(255, 255, 255, .86);
+  font-size: 17px;
+}
+
+.button {
+  min-height: 46px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 0;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform .16s ease, background .16s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-lime {
+  color: var(--forest-deep);
+  background: var(--leaf);
+}
+
+.button-lime:hover {
+  background: #e2f58a;
+}
+
+.button-dark {
+  color: #fff;
+  background: var(--forest);
+}
+
+.button-dark:hover {
+  background: var(--forest-deep);
+}
+
+.button-outline {
+  color: var(--forest);
+  border: 1px solid var(--forest);
+  background: transparent;
+}
+
+.button-outline:hover {
+  background: rgba(23, 74, 53, .08);
+}
+
+.button-full {
+  width: 100%;
+}
+
+.hero-note {
+  margin: 16px 0 0;
+  color: rgba(255, 255, 255, .74);
+  font-size: 12px;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 460px;
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(rgba(18, 35, 27, .32), rgba(18, 35, 27, .2)), url("../assets/collection-truck-and-worker.jpg") center/cover no-repeat;
+}
+
+.visual-label {
+  position: absolute;
+  z-index: 2;
+  right: 7%;
+  bottom: 32px;
+  left: 7%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.visual-label-icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .75);
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.visual-label b {
+  display: block;
+  margin-top: 2px;
+  font: 600 17px var(--font-display);
+}
+
+.visual-label small {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  opacity: .88;
+}
+
+.trust-strip {
+  min-height: 68px;
+  padding: 14px max(24px, calc((100vw - 1200px) / 2));
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+  background: #eaf0df;
+}
+
+.trust-strip .status-pip {
+  flex: 0 0 auto;
+  background: var(--forest);
+}
+
+.trust-strip p {
+  flex: 1;
+  margin: 0;
+  color: #2f3d33;
+  font-size: 13px;
+}
+
+.trust-strip a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--forest);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.section-wrap {
+  width: min(1200px, calc(100% - 48px));
+  margin: auto;
+}
+
+.home-shortcuts {
+  padding: 72px 0 80px;
+}
+
+.section-heading {
+  margin-bottom: 28px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.section-heading h2,
+.closing-cta h2 {
+  margin: 0;
+  font-size: clamp(28px, 3.8vw, 42px);
+  line-height: 1.1;
+}
+
+.section-aside {
+  max-width: 340px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.shortcut {
+  min-height: 244px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  transition: transform .18s ease;
+}
+
+.shortcut:hover {
+  transform: translateY(-4px);
+}
+
+.shortcut-green {
+  color: #fff;
+  background: var(--forest);
+}
+
+.shortcut-yellow {
+  color: var(--ink);
+  background: var(--sun);
+}
+
+.shortcut-orange {
+  color: var(--ink);
+  background: #f5a078;
+}
+
+.shortcut-number {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.shortcut-icon {
+  min-height: 48px;
+  margin-top: 12px;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.shortcut h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.shortcut p {
+  margin: 0 0 18px;
+  font-size: 13px;
+  opacity: .88;
+}
+
+.shortcut-link {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.notice-band {
+  color: #fff;
+  background: #263d31;
+}
+
+.notice-inner {
+  width: min(1200px, calc(100% - 48px));
+  margin: auto;
+  padding: 68px 0 74px;
+  display: grid;
+  grid-template-columns: .78fr 1.22fr;
+  gap: 8%;
+}
+
+.notice-title h2 {
+  margin: 0 0 14px;
+  font-size: 36px;
+  line-height: 1.08;
+}
+
+.notice-title>p:not(.eyebrow) {
+  max-width: 310px;
+  color: rgba(255, 255, 255, .76);
+  font-size: 14px;
+}
+
+.text-link {
+  min-height: 44px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--forest);
+  font-size: 13px;
+  font-weight: 700;
+  text-underline-offset: 4px;
+}
+
+.light-link {
+  color: #fff;
+}
+
+.notice-item {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 18px;
+  border-top: 1px solid rgba(255, 255, 255, .22);
+}
+
+.notice-item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, .22);
+}
+
+.notice-item time {
+  padding-top: 4px;
+  color: var(--leaf);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .8px;
+}
+
+.notice-item h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.notice-item p {
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, .78);
+  font-size: 13px;
+}
+
+.notice-item a {
+  color: var(--leaf);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.closing-cta {
+  min-height: 210px;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--leaf);
+}
+
+.closing-cta h2 {
+  margin-bottom: 18px;
+}
+
+.page-hero {
+  position: relative;
+  min-height: 280px;
+  padding: 52px 24px 44px;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page-hero-green {
+  color: #fff;
+  background-image: linear-gradient(rgba(16, 55, 39, .72), rgba(16, 55, 39, .72)), url("../assets/volunteers-collecting-litter.jpg");
+}
+
+.page-hero-yellow {
+  color: var(--ink);
+  background-image: linear-gradient(rgba(240, 200, 75, .8), rgba(240, 200, 75, .78)), url("../assets/collection-truck-and-worker.jpg");
+}
+
+.page-hero-orange {
+  color: var(--ink);
+  background-image: linear-gradient(rgba(245, 160, 120, .78), rgba(245, 160, 120, .74)), url("../assets/street-waste-cleanup.jpg");
+}
+
+.page-hero-inner {
+  width: min(1200px, 100%);
+  margin: auto;
+}
+
+.page-hero-green .eyebrow {
+  color: var(--leaf);
+}
+
+.page-hero-yellow .eyebrow,
+.page-hero-orange .eyebrow {
+  color: var(--forest);
+}
+
+.page-hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1.02;
+}
+
+.page-hero-yellow h1 em,
+.page-hero-orange h1 em {
+  color: var(--forest);
+}
+
+.page-hero-inner>p:not(.eyebrow) {
+  max-width: 580px;
+  margin: 0;
+  font-size: 16px;
+  opacity: .9;
+}
+
+.confirmation-banner {
+  width: fit-content;
+  max-width: 640px;
+  margin-top: 18px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(255, 255, 255, .15);
+  font-size: 13px;
+}
+
+.page-hero-yellow .confirmation-banner,
+.page-hero-orange .confirmation-banner {
+  background: rgba(255, 255, 255, .52);
+}
+
+.confirmation-banner .status-pip {
+  margin-top: 5px;
+  background: var(--forest);
+}
+
+.page-hero-green .confirmation-banner .status-pip {
+  background: var(--leaf);
+}
+
+.confirmation-banner strong,
+.confirmation-banner small {
+  display: block;
+}
+
+.confirmation-banner small {
+  margin-top: 3px;
+  opacity: .85;
+}
+
+.content-layout {
+  width: min(1200px, calc(100% - 48px));
+  margin: auto;
+  padding: 60px 0 84px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: start;
+}
+
+.main-column {
+  min-width: 0;
+}
+
+.content-section {
+  padding: 0 0 40px;
+  margin: 0 0 38px;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 24px;
+}
+
+.content-section:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.content-section h2 {
+  margin: 0 0 14px;
+  font-size: 29px;
+  line-height: 1.15;
+}
+
+.content-section>p:not(.eyebrow) {
+  max-width: 740px;
+  color: #3f4b43;
+  font-size: 15px;
+}
+
+.side-column {
+  display: grid;
+  gap: 16px;
+}
+
+.side-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.side-card .eyebrow {
+  color: var(--forest);
+  font-size: 10px;
+}
+
+.side-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.side-card p:not(.eyebrow) {
+  color: #46524a;
+  font-size: 13px;
+}
+
+.side-card-orange {
+  border: 0;
+  background: #f5a078;
+}
+
+.side-card-yellow {
+  border: 0;
+  background: var(--sun);
+}
+
+.side-card-green {
+  border: 0;
+  color: #fff;
+  background: var(--forest);
+}
+
+.side-card-green .eyebrow,
+.side-card-green p:not(.eyebrow) {
+  color: rgba(255, 255, 255, .84);
+}
+
+.side-card-green h3 {
+  color: #fff;
+}
+
+.zone-tabs {
+  margin: 20px 0 18px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.zone-tabs a {
+  min-height: 44px;
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  color: var(--forest);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.zone-tabs a:hover {
+  border-color: var(--forest);
+  background: #eaf0df;
+}
+
+.zone-table {
+  margin-bottom: 12px;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: .9fr 1.15fr 1.1fr auto;
+  gap: 16px;
+  align-items: center;
+  border: 1px solid var(--line);
+  background: #fff;
+  scroll-margin-top: 20px;
+}
+
+.zone-name span,
+.zone-detail span,
+.zone-status small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.zone-name span {
+  color: var(--forest);
+  font-weight: 700;
+  letter-spacing: .8px;
+}
+
+.zone-name h3 {
+  margin: 3px 0 0;
+  font-size: 18px;
+}
+
+.zone-detail strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 13px;
+}
+
+.zone-status {
+  text-align: right;
+}
+
+.status-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  color: var(--forest-deep);
+  background: #dff0c2;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .7px;
+}
+
+.zone-status small {
+  margin-top: 6px;
+}
+
+.map-figure {
+  margin: 20px 0;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.map-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-figure figcaption {
+  padding: 12px 14px;
+  color: var(--muted);
+  font-size: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+  width: 100%;
+  margin-top: 18px;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 13px;
+  text-align: left;
+}
+
+.data-table th {
+  padding: 12px;
+  color: #fff;
+  background: var(--forest);
+  font-size: 11px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.data-table td {
+  padding: 14px 12px;
+  border: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.data-table a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--forest);
+  font-weight: 700;
+}
+
+.step-row {
+  padding: 16px 0;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  align-items: start;
+  border-top: 1px solid var(--line);
+}
+
+.step-row>span {
+  color: var(--forest);
+  font: 700 20px var(--font-display);
+}
+
+.step-row p {
+  margin: 0;
+  color: #3f4b43;
+  font-size: 14px;
+}
+
+.source-note {
+  margin: 16px 0 0;
+  padding-left: 12px;
+  border-left: 3px solid var(--sun);
+  color: var(--muted);
+  font-size: 12px !important;
+}
+
+.check-list,
+.mini-list {
+  padding: 0;
+  list-style: none;
+}
+
+.check-list li,
+.mini-list li {
+  position: relative;
+  padding: 10px 0 10px 24px;
+  border-top: 1px solid var(--line);
+  color: #3f4b43;
+  font-size: 13px;
+}
+
+.check-list li::before,
+.mini-list li::before {
+  position: absolute;
+  left: 1px;
+  color: var(--forest);
+  content: "✓";
+  font-weight: 700;
+}
+
+.advice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.advice-grid article {
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.advice-grid article>span {
+  color: var(--forest);
+  font: 700 18px var(--font-display);
+}
+
+.advice-grid h3 {
+  margin: 12px 0 8px;
+  font-size: 17px;
+}
+
+.advice-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.form-section {
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.local-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.form-field {
+  display: grid;
+  gap: 6px;
+}
+
+.form-field label {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.local-form input:not([type="checkbox"]),
+.local-form textarea,
+.local-form select {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid #9aa89d;
+  border-radius: 0;
+  color: var(--ink);
+  background: #fff;
+  font-size: 15px;
+}
+
+.local-form textarea {
+  resize: vertical;
+}
+
+.consent-check {
+  min-height: 44px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.consent-check input {
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  flex: 0 0 auto;
+  accent-color: var(--forest);
+}
+
+.local-form .button {
+  justify-self: start;
+}
+
+.target-confirmation {
+  display: none;
+  margin-top: 18px;
+  padding: 16px;
+  border-left: 4px solid var(--forest);
+  background: #eaf0df;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.target-confirmation:target {
+  display: block;
+}
+
+.target-confirmation strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--forest-deep);
+}
+
+.target-confirmation a {
+  color: var(--forest);
+  font-weight: 700;
+}
+
+.report-types {
+  margin-top: 20px;
+}
+
+.report-types article {
+  padding: 16px 0;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.report-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: var(--forest);
+  background: var(--leaf);
+  font: 700 20px var(--font-display);
+}
+
+.report-types h3 {
+  margin: 0 0 4px;
+  font-size: 17px;
+}
+
+.report-types p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.sorting-chart-figure {
+  margin: 20px 0;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.sorting-chart-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sorting-chart-figure figcaption {
+  padding: 10px 14px;
+  color: var(--muted);
+  font-size: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.sort-visual {
+  margin: 20px 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.sort-panel {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sort-organic {
+  color: #fff;
+  background: var(--forest);
+}
+
+.sort-dry {
+  color: var(--ink);
+  background: var(--sun);
+}
+
+.sort-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.sort-panel h3 {
+  margin: 8px 0 6px;
+  font-size: 20px;
+}
+
+.sort-panel p {
+  margin: 0 0 16px;
+  font-size: 13px;
+  opacity: .9;
+}
+
+.sort-foot {
+  margin-top: auto;
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid currentColor;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.story-section {
+  padding: 24px;
+  background: #eaf0df;
+}
+
+.video-wrap {
+  width: min(100%, 860px);
+  margin-top: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #0f1c16;
+  box-shadow: 0 10px 24px rgba(23, 74, 53, .10);
+}
+
+.video-wrap video {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  background: #0f1c16;
+}
+
+.community-photo {
+  width: min(100%, 280px);
+  margin: 18px 0 0;
+}
+
+.community-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.community-photo figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.contact-row {
+  margin: 16px 0;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-row span,
+.source-list li>span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.contact-row strong {
+  font: 600 16px var(--font-display);
+}
+
+.source-list {
+  padding: 0;
+  list-style: none;
+}
+
+.source-list li {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+.source-list li p {
+  margin: 0 0 8px;
+  color: #3f4b43;
+  font-size: 13px;
+}
+
+.source-list li a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--forest);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.site-footer {
+  color: #fff;
+  background: var(--forest-deep);
+}
+
+.footer-main,
+.footer-bottom {
+  width: min(1200px, calc(100% - 48px));
+  margin: auto;
+}
+
+.footer-main {
+  padding: 36px 0 26px;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr 1.3fr;
+  align-items: center;
+  gap: 28px;
+}
+
+.brand-footer {
+  color: #fff;
+}
+
+.brand-footer .brand-name b {
+  color: var(--leaf);
+}
+
+.brand-footer .brand-name small {
+  color: rgba(255, 255, 255, .64);
+}
+
+.footer-main>p {
+  max-width: 260px;
+  margin: 0;
+  color: rgba(255, 255, 255, .78);
+  font-size: 13px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+}
+
+.footer-links a,
+.footer-bottom a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 255, 255, .86);
+  font-size: 12px;
+}
+
+.footer-bottom {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid rgba(255, 255, 255, .18);
+  color: rgba(255, 255, 255, .72);
+  font-size: 11px;
+}
+
+@media (max-width: 799px) {
+  .header-inner {
+    width: calc(100% - 32px);
+    min-height: 72px;
+  }
+
+  .nav-drawer {
+    display: block;
+  }
+
+  .menu-toggle {
+    min-height: 44px;
+    padding: 0 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--forest);
+    color: var(--forest);
+    background: #fff;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .primary-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    padding: 8px 20px 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .12);
+  }
+
+  .primary-nav a:not(.nav-report) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .primary-nav .nav-report {
+    margin-top: 12px;
+    justify-content: center;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-copy {
+    width: 100%;
+    padding: 48px 20px 36px;
+  }
+
+  .section-wrap,
+  .notice-inner,
+  .footer-main,
+  .footer-bottom,
+  .content-layout,
+  .alert-banner-inner {
+    width: calc(100% - 32px);
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .shortcut-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .notice-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 48px 0;
+  }
+
+  .notice-item {
+    grid-template-columns: 92px 1fr;
+    gap: 12px;
+  }
+
+  .content-layout {
+    grid-template-columns: 1fr;
+    padding: 40px 0 60px;
+    gap: 28px;
+  }
+
+  .zone-table {
+    grid-template-columns: 1fr;
+  }
+
+  .zone-status {
+    text-align: left;
+  }
+
+  .advice-grid,
+  .sort-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0;
+    gap: 4px;
+  }
+}
+
+/* Project media and updated responsive layout — Group 15 */
+.nav-drawer.mobile-nav {
+  display: none;
+}
+
+.desktop-nav {
+  display: flex;
+}
+
+@media (max-width:799px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .nav-drawer.mobile-nav {
+    display: block;
+  }
+
+  .nav-drawer.mobile-nav:not([open]) .primary-nav {
+    display: none;
+  }
+
+  .nav-drawer.mobile-nav[open] .primary-nav {
+    display: flex;
+  }
+}
+
+.page-hero {
+  min-height: 335px;
+  display: flex;
+  align-items: center;
+}
+
+.page-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero-yellow {
+  color: #fff;
+  background-image: linear-gradient(100deg, rgba(14, 44, 32, .93) 4%, rgba(14, 44, 32, .72) 54%, rgba(14, 44, 32, .36)), url('../assets/waste-loading-collection.jpg');
+}
+
+.page-hero-yellow .eyebrow,
+.page-hero-yellow h1 em {
+  color: var(--leaf);
+}
+
+.page-hero-orange {
+  color: #fff;
+  background-image: linear-gradient(100deg, rgba(42, 31, 23, .9), rgba(52, 32, 21, .66) 60%, rgba(52, 32, 21, .38)), url('../assets/street-waste-cleanup.jpg');
+}
+
+.page-hero-orange .eyebrow,
+.page-hero-orange h1 em {
+  color: #ffe08c;
+}
+
+.page-hero-green {
+  background-image: linear-gradient(100deg, rgba(12, 46, 33, .92), rgba(12, 46, 33, .69) 60%, rgba(12, 46, 33, .26)), url('../assets/city-garbage-truck-kampala.jpg');
+}
+
+body[data-page='community'] .page-hero-green {
+  background-image: linear-gradient(100deg, rgba(12, 46, 33, .92), rgba(12, 46, 33, .68) 60%, rgba(12, 46, 33, .22)), url('../assets/volunteers-collecting-litter.jpg');
+}
+
+body[data-page='about'] .page-hero-yellow {
+  background-image: linear-gradient(100deg, rgba(12, 46, 33, .93), rgba(12, 46, 33, .69) 60%, rgba(12, 46, 33, .22)), url('../assets/community-cleanup-team.jpg');
+}
+
+.page-hero-yellow .confirmation-banner,
+.page-hero-orange .confirmation-banner {
+  background: rgba(0, 0, 0, .24);
+}
+
+.page-hero-yellow .confirmation-banner .status-pip,
+.page-hero-orange .confirmation-banner .status-pip {
+  background: var(--leaf)
+}
+
+.hero {
+  background-image: linear-gradient(95deg, rgba(11, 45, 30, .91), rgba(11, 45, 30, .73)), url('../assets/community-cleanup-team.jpg');
+}
+
+.hero-visual {
+  background-image: linear-gradient(0deg, rgba(8, 27, 18, .70), rgba(8, 27, 18, .05) 55%), url('../assets/city-garbage-truck-kampala.jpg');
+  background-position: center;
+}
+
+.photo-feature {
+  margin: 24px 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.photo-feature img {
+  display: block;
+  width: 100%;
+  max-height: 395px;
+  object-fit: cover;
+}
+
+.photo-feature figcaption {
+  padding: 12px 16px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 26px 0 56px;
+}
+
+.photo-grid figure {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.photo-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.photo-grid figcaption {
+  padding: 12px 14px;
+  color: #415345;
+  font-size: 13px;
+}
+
+.home-photo-story {
+  padding-top: 56px;
+}
+
+.home-photo-story h2 {
+  font-size: clamp(26px, 3.6vw, 38px);
+}
+
+.photo-feature.narrow-photo img {
+  max-height: 290px;
+}
+
+.sorting-chart-figure img {
+  max-height: 440px;
+  object-fit: cover;
+}
+
+.sort-panel img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin: 14px 0 12px;
+}
+
+.sort-organic img {
+  object-position: center 40%;
+}
+
+.sort-dry img {
+  object-position: center;
+}
+
+.map-figure img {
+  background: #edf3e8;
+}
+
+.form-notice {
+  padding: 13px 15px;
+  margin: 16px 0;
+  border-left: 4px solid var(--sun);
+  background: #fff7da;
+  font-size: 13px;
+  color: #3e3c2a;
+}
+
+.form-notice a {
+  font-weight: 700;
+  color: var(--forest);
+}
+
+.honeypot-field {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+.video-caption {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 12px 0 0;
+}
+
+.video-wrap video {
+  aspect-ratio: 16/9;
+}
+
+@media(max-width:799px) {
+  .hero-visual {
+    min-height: 290px;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 42px;
+  }
+
+  .page-hero {
+    padding: 45px 20px;
+    min-height: 300px;
+  }
+
+  .hero {
+    background-position: center;
+  }
+
+  .home-photo-story {
+    padding-top: 40px;
+  }
+}
+
+@media(max-width:480px) {
+  .notice-item {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .alert-banner-inner .button {
+    width: 100%;
+  }
+
+  .brand-name {
+    font-size: 15px;
+  }
+
+  .form-section {
+    padding: 16px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 12vw, 60px);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(36px, 10vw, 52px);
+  }
+}
+
+.video-transcript {
+  margin: 20px 0;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.video-transcript summary {
+  color: var(--forest);
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 35px;
+}
+
+.video-transcript li {
+  padding: 4px 0;
+  font-size: 14px;
+}
+
+/* 15 Nov 2026: user-supplied imagery and home video additions */
+.hero {
+  background-image: linear-gradient(100deg, rgba(12, 44, 30, .91), rgba(12, 44, 30, .81) 60%, rgba(12, 44, 30, .72)), url('../assets/recycling-background.jpg');
+  background-position: center;
+}
+
+.hero-visual {
+  background-image: linear-gradient(0deg, rgba(8, 27, 18, .75), rgba(8, 27, 18, .02) 62%), url('../assets/city-garbage-truck-kampala.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.home-video-feature {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(24px, 4vw, 60px);
+  align-items: center;
+  margin-bottom: 72px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: #eaf1e6;
+}
+
+.home-video-feature h2 {
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1.12;
+}
+
+.home-video-feature .media-disclaimer {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 20px 0 0;
+}
+
+.home-video-player {
+  margin: 0;
+  min-width: 0;
+}
+
+.home-video-player video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #112f22;
+}
+
+.home-video-player figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 10px 0 0;
+}
+
+.home-video-player figcaption a {
+  font-weight: 700;
+  color: var(--forest);
+}
+
+.sorting-practical-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 28px 0;
+}
+
+.sorting-practical-gallery figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: #fff;
+  overflow: hidden;
+}
+
+.sorting-practical-gallery img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.sorting-practical-gallery figcaption {
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.sorting-practical-gallery figcaption strong {
+  color: var(--forest);
+}
+
+@media (max-width:799px) {
+  .home-video-feature {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    margin-bottom: 50px;
+  }
+
+  .sorting-practical-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .sorting-practical-gallery img {
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+}
+
+
+/* 15 Nov 2026 — user-supplied photographs, distinct cover/background images */
+body[data-page='home'] .hero {
+  background-image: linear-gradient(98deg, rgba(10, 45, 32, .91) 0%, rgba(10, 45, 32, .70) 57%, rgba(10, 45, 32, .56)), url('../assets/collection-worker-teal-truck.jpg');
+  background-position: center 44%;
+}
+
+body[data-page='home'] .hero-visual {
+  background-image: linear-gradient(0deg, rgba(7, 32, 22, .76), rgba(7, 32, 22, .07) 58%), url('../assets/kcca-keep-kampala-clean.jpg');
+  background-position: center 52%;
+}
+
+body[data-page='schedule'] .page-hero-green {
+  background-image: linear-gradient(96deg, rgba(10, 48, 35, .92), rgba(10, 48, 35, .70) 62%, rgba(10, 48, 35, .22)), url('../assets/collection-worker-teal-truck.jpg');
+  background-position: center 50%;
+}
+
+body[data-page='collectors'] .page-hero-yellow {
+  background-image: linear-gradient(96deg, rgba(12, 46, 33, .93), rgba(12, 46, 33, .73) 62%, rgba(12, 46, 33, .31)), url('../assets/teal-truck-collection-process.jpg');
+  background-position: center 30%;
+}
+
+body[data-page='report'] .page-hero-orange {
+  background-image: linear-gradient(100deg, rgba(34, 35, 29, .92), rgba(34, 35, 29, .65) 60%, rgba(34, 35, 29, .3)), url('../assets/roadside-cleanup.jpg');
+  background-position: center 47%;
+}
+
+body[data-page='community'] .page-hero-green {
+  background-image: linear-gradient(96deg, rgba(10, 45, 33, .92), rgba(10, 45, 33, .72) 60%, rgba(10, 45, 33, .22)), url('../assets/volunteer-litter-pickup.jpg');
+  background-position: center 47%;
+}
+
+body[data-page='about'] .page-hero-yellow {
+  background-image: linear-gradient(100deg, rgba(10, 45, 32, .92), rgba(10, 45, 32, .66) 62%, rgba(10, 45, 32, .23)), url('../assets/community-sorting-drive.jpg');
+  background-position: center 52%;
+}
+
+.community-photo-wall {
+  margin: 34px 0 44px;
+  padding: 24px;
+  background: #eaf1e6;
+}
+
+.community-photo-wall h3 {
+  font-size: clamp(20px, 2.4vw, 29px);
+  margin-bottom: 14px;
+}
+
+.community-photo-wall-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.community-photo-wall figure {
+  min-width: 0;
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.community-photo-wall img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.community-photo-wall figcaption {
+  padding: 11px 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.sorting-practical-gallery {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sorting-practical-gallery img {
+  height: 195px;
+}
+
+.short-video-feature {
+  margin-top: 24px;
+  padding: 20px;
+  background: #eaf1e6;
+  border: 1px solid var(--line);
+}
+
+.short-video-feature h3 {
+  margin-bottom: 6px;
+}
+
+.short-video-feature p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.short-video-feature video {
+  display: block;
+  width: min(550px, 100%);
+  aspect-ratio: 16/9;
+  background: #172e23;
+}
+
+.home-video-player video,
+.video-wrap video {
+  object-fit: contain;
+}
+
+@media (max-width:900px) {
+  .sorting-practical-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .community-photo-wall-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width:600px) {
+
+  .sorting-practical-gallery,
+  .community-photo-wall-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sorting-practical-gallery img {
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+
+  .community-photo-wall {
+    padding: 15px;
+  }
+
+  .community-photo-wall img {
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+}
